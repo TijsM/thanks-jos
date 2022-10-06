@@ -14,7 +14,7 @@ const Home: NextPage = () => {
       const res = await fetch("/api/hello");
       const data = await res.json();
 
-      setData(data)
+      setData(data);
     };
 
     getData();
@@ -39,21 +39,13 @@ const Home: NextPage = () => {
 export default Home;
 
 const StCardsContainer = styled.div`
-  width: 100%;
   background-color: #ffffff;
   min-height: 100vh;
-  column-count: 5;
-
-  @media (max-width: 2300px) {
-    column-count: 4;
-  }
-  @media (max-width: 1850px) {
-    column-count: 3;
-  }
-  @media (max-width: 1400px) {
-    column-count: 2;
-  }
-  @media (max-width: 950px) {
-    column-count: 1;
-  }
+  margin: 24px;
+  
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 24px;
 `;

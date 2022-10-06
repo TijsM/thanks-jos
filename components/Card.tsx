@@ -29,13 +29,13 @@ export function Card({ data }: CardProps) {
 }
 
 const StContainer = styled.div<{ backgroundColor: string }>`
+  flex: 1 auto;
   position: relative;
   box-shadow: 1px 8px 9px -1px #60605c40;
   background-color: ${({ backgroundColor }) => backgroundColor};
   display: inline-block;
   padding: 24px;
-  width: 400px;
-  margin: 24px;
+  max-width: 400px;
   border-radius: 16px;
 
   justify-self: center;
