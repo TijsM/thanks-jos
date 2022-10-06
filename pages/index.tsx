@@ -43,6 +43,7 @@ const StCardsContainer = styled.div`
   background-color: #ffffff;
   min-height: 100vh;
   column-count: 5;
+  margin-bottom: 200px;
 
   @media (max-width: 2300px) {
     column-count: 4;

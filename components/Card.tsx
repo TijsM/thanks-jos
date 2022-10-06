@@ -10,36 +10,51 @@ export function Card({ data }: CardProps) {
   const colors = ["#f3fcee", "#edf6ff", "#feefff", "#fff4f0"];
 
   return (
-    <StContainer
-      backgroundColor={colors[Math.floor(Math.random() * colors.length)]}
-    >
-      <StImageContainer>
-        <Image
-          src={data.image}
-          alt={`Picture fron ${data.name}`}
-          layout="fill"
-          objectFit="cover"
-        />
-      </StImageContainer>
-      <StName>{`${data.name} ${
-        data.headline ? "- " + data.headline : ""
-      }`}</StName>
-      <StContent>{data.story}</StContent>
-    </StContainer>
+    <StCenter>
+      <StContainer
+        backgroundColor={colors[Math.floor(Math.random() * colors.length)]}
+      >
+        <StImageContainer>
+          <Image
+            src={data.image}
+            alt={`Picture fron ${data.name}`}
+            layout="fill"
+            objectFit="cover"
+          />
+        </StImageContainer>
+        <StName>{`${data.name} ${
+          data.headline ? "- " + data.headline : ""
+        }`}</StName>
+        <StContent>{data.story}</StContent>
+      </StContainer>
+    </StCenter>
   );
 }
+
+const StCenter = styled.div`
+/* background-color: green;
+margin-left: auto;
+margin-right: auto; */
+
+/* display: grid; */
+  /* display: flex; */
+  /* align-items: center;
+  justify-content: center; */
+`;
 
 const StContainer = styled.div<{ backgroundColor: string }>`
   position: relative;
   box-shadow: 1px 8px 9px -1px #60605c40;
   background-color: ${({ backgroundColor }) => backgroundColor};
-  display: inline-block;
-  padding: 24px;
+  display: block;
+  /* margin-left: auto;
+  margin-right: auto; */
+    padding: 24px;
   width: 400px;
-  margin: 24px;
+  margin: 48px auto;
   border-radius: 16px;
 
-  justify-self: center;
+
 
   transition-duration: 0.15s;
 
